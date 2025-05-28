@@ -1,0 +1,176 @@
+/* stopwatch app css */
+/* initialize CSS variables  */
+:root {
+    --light : #ffffff;
+    --dark : #16151B;
+    --dark2 : #070609;
+    --purple : #9A49FF;
+    --darkgray : #4A4d55;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Style the body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    min-height :100vh;
+    background-color: var(--dark);
+    transition: all .5s ease;
+}
+body.light {
+    background-color: var(--light);
+}
+
+/* Style the stopwatch container */
+.stopwatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    border: 5px solid --darkgray;
+    padding: 10px 20px;
+    border-radius: 50%;
+    background-color: var(--dark2);
+    gap: 16px;
+    width: 50vh;
+    height: 50vh;
+    box-shadow:  0 0 50px #9b49ff54;
+    overflow: hidden;
+}
+
+.light .stopwatch {
+    background-color: var(--light);
+}
+
+/* Style the header */
+.stopwatch .header {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    color : var(--light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.light .stopwatch .header {
+    color: var(--dark);
+}
+
+/* Style the display */
+.stopwatch .display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--light);
+}
+.light .stopwatch .display {
+    color: var(--dark);
+}
+
+/* Style mode in display */
+.stopwatch .display .mode { 
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--purple);
+    margin-right: 8px;
+    cursor : pointer;
+}
+
+/* Style the controls */
+.stopwatch .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+.controls .btn {
+    min-width: 124px;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 16px;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.controls .start {
+    background-color: rgb(14, 168, 80);
+}
+.controls .start:hover {
+    background-color: rgb(14, 168, 10);
+}
+.controls .stop {
+    background-color: rgb(211, 31, 31);
+}
+.controls .stop:hover {
+    background-color: rgb(211, 31, 90);
+}
+.controls .resume {
+    background-color: rgb(14, 168, 80);
+}
+.controls .resume:hover {
+    background-color: rgb(14, 168, 10);
+}
+.controls .reset {
+    background-color: rgb(17, 91, 187);
+}
+.controls .reset:hover {
+    background-color: rgb(17, 91, 100);
+}
+.controls .lap {
+    background-color: rgba(131, 10, 91, 0.63);
+}
+.controls .lap:hover {
+    background-color: rgba(88, 6, 6, 0.781);
+}
+
+/* Style the laps container */
+.stopwatch .lapse-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    color: var(--light);
+    font-size: 1rem;
+}
+.light .stopwatch .lapse-container {
+    color: var(--dark);
+}
+.stopwatch .lapse-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/*Style to be responsive on small screen devices */
+@media screen and (max-width: 660px) {
+    .stopwatch {
+        width: fit-content;
+        height: fit-content;
+        padding: 50px;
+    }
+ 
+    .stopwatch .header {
+        font-size: 2rem;
+    }
+    .stopwatch .display {
+        font-size: 2rem;
+    }
+    .controls .btn {
+        min-width: 100px;
+        height: 35px;
+        font-size: medium;
+    }
+    
+}
