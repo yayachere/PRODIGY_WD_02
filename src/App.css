@@ -21,6 +21,7 @@ body {
     min-height :100vh;
     background-color: var(--dark);
     transition: all .5s ease;
+    overflow: hidden;
 }
 body.light {
     background-color: var(--light);
@@ -156,8 +157,8 @@ body.light {
 /*Style to be responsive on small screen devices */
 @media screen and (max-width: 660px) {
     .stopwatch {
-        width: fit-content;
-        height: fit-content;
+        width: 300px;
+        height: 300px;
         padding: 50px;
     }
  
@@ -171,6 +172,11 @@ body.light {
         min-width: 100px;
         height: 35px;
         font-size: medium;
+    }
+    .lapse-container {
+        width: 100%;
+        height: 30px;
+        font-size: 0.8rem;
     }
     
 }
